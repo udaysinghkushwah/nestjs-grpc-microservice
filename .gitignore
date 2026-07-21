@@ -1,0 +1,16 @@
+# Compiled output
+/dist
+/node_modules
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+
+# OS / Editor files
+.DS_Store
+.vscode
+.idea

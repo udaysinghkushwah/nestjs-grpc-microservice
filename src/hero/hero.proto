@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package hero;
+
+// Service definition for Hero gRPC Microservice
+service HeroService {
+  // Unary RPC: Client sends 1 request, Server returns 1 response
+  rpc FindOne (HeroById) returns (Hero);
+
+  // Server Streaming RPC: Client sends 1 request, Server streams multiple responses
+  rpc FindMany (HeroByIdStream) returns (stream Hero);
+}
+
+message HeroById {
+  int32 id = 1;
+}
+
+message HeroByIdStream {
+  repeated int32 ids = 1;
+}
+
+message Hero {
+  int32 id = 1;
+  string name = 2;
+  string superpower = 3;
+  int32 level = 4;
+}
